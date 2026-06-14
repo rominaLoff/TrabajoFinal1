@@ -1,4 +1,5 @@
 const URL_PRODUCTOS = "https://fakestoreapi.com/products";
+const URL_CATEGORIAS = "https://fakestoreapi.com/products/categories";
 
 function obtenerProductos() {
     fetch(URL_PRODUCTOS)
@@ -34,6 +35,8 @@ function mostrarProductos(lista) {
     });
 }
 
+
+
 function abrirModal(producto) {
     const modal = document.getElementById("modal-producto");
     const contenedorDetalle = document.getElementById("detalle-producto-modal");
@@ -51,6 +54,7 @@ function abrirModal(producto) {
 
 document.addEventListener("DOMContentLoaded",()=>{
     obtenerProductos();
+    obtenerCategorias();
 });
 const modal = document.getElementById("modal-producto");
 const btnCerrar = document.querySelector(".cerrar-modal");
@@ -64,3 +68,33 @@ window.onclick = (event) => {
         modal.style.display = "none";
     }
 };
+
+function obtenerCategorias() {
+    fetch(URL_CATEGORIAS)
+    .then(respuesta => respuesta.json())
+    .then(categorias => llenarComboCategorias(categorias))
+}
+
+function llenarComboCategorias(categorias) {
+    const select = document.getElementById("filtroCategorias");
+    categorias.forEach(categoria => {
+    const opcion = document.createElement("option");
+    opcion.value = categoria;
+    opcion.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+    select.appendChild(opcion);
+});}
+
+const comboCategorias = document.getElementById("filtroCategorias");
+comboCategorias.addEventListener("change", (evento) => {
+    const categoriaElegida = evento.target.value;
+    let urlDestino = URL_PRODUCTOS;
+    if (categoriaElegida !== "todos") {
+        urlDestino = `http://fakestoreapi.com/products/category/${categoriaElegida}`;
+    }
+    document.getElementById("contenedor-productos").innerHTML = "<p>Cargando productos...</p>";
+    fetch(urlDestino)
+    .then(respuesta => respuesta.json())
+    .then(productosFiltrados => mostrarProductos(productosFiltrados));
+});
+
+
