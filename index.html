@@ -14,7 +14,8 @@
         </div>
 
         <div id ="Carrito-compras">
-            <span id="contador-carrito"> 🛒 Carrito (0) </span>            
+            <span id="contador-carrito"> 🛒 Carrito (0) </span>
+            <button id="btn-ver-carrito" class="btn-encabezado-carrito">Ver Carrito</button>        
         </div>
     </header>
     <main class="contenedor-principal">
@@ -41,7 +42,22 @@
             </div> 
         </div>
     </div>
-    
+    <div id="modal-carrito" class="modal">
+        <div class="modal-contenido-carrito">
+            <span class="cerrar-modal" id= "cerrar-carrito-btn">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+
+            <div id="items-carrito-contenedor">
+            </div> 
+            <div class="resumen-carrito">
+                <p>Cantidad de productos: <span id="total-cantidad">0</span></p>
+                <p><strong>Total a pagar: $<span id="total-precio">0.00</span></strong></p>
+            </div>
+
+            <button class="btn-vaciar" id="btn-vaciar-carrito">Vaciar Carrito</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

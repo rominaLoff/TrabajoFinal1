@@ -167,3 +167,96 @@ header {
 }
 
 
+.modal-contenido-carrito {
+    background-color:white;
+    margin:5% auto;
+    padding: 25px;
+    width: 40%;
+    min-width: 320px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-carrito h4 {
+        font-size: 13px;
+        margin: 0;
+        flex-grow: 1; /*Esto empuja el precio hacia la derecha de todo*/
+        max-width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Corta textos largos con ... */
+    }
+
+.img-mini-carrito {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.resumen-carrito {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #333;
+    font-size: 16px;
+    text-align: right;
+}
+
+.btn-vaciar {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-vaciar:hover {
+    background-color: #c9302c;
+}
+
+.btn-encabezado-carrito {
+    background-color: #b1f4d7;
+    color: rgb(31, 32, 31);
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-encabezado-carrito:hover {
+    background-color: #79f6bd;
+    
+}
+
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+.btn-eliminar-item:hover {
+    transform: scale(1.3);
+}
