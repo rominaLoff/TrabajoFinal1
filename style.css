@@ -61,3 +61,92 @@ header {
     padding-right: 30px;
     padding-top: 10px;
 }
+.card-producto {
+    display: flex;
+    background-color: #d4daee;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    gap: 20px;  
+   
+}
+.card-producto img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    flex: 1;
+}
+
+.btn-agregar {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.btn-detalle {
+    background-color: #3227ae;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    max-height: 80vh; 
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    overflow: auto;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
