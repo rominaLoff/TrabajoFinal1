@@ -20,6 +20,7 @@ function mostrarProductos(lista) {
         card.innerHTML = `
             <img src="${producto.image}" alt="${producto.title}">
             <div class="info-producto">
+                
                 <h3>${producto.title}</h3>
                 <p class= "precio">$${producto.price}</p>
                 <button class="btn-detalle">Ver Detalle</button>
@@ -45,8 +46,9 @@ function abrirModal(producto) {
     const contenedorDetalle = document.getElementById("detalle-producto-modal");
 
     contenedorDetalle.innerHTML = `
+        <h4>${producto.category}</h4>
         <h2>${producto.title}</h2>
-        <img src="${producto.image}" style="width:100px; display:block; margin:10px auto; object-fit:contain;">
+        <img src="${producto.image}" class="img-detalle-modal">
         <p>${producto.description}</p>
         <p><strong>Precio: $${producto.price}</strong></p>
         <button class="btn-agregar" id="btn-agregar-modal">Agregar al carrito</button>
@@ -189,5 +191,15 @@ if (btnVaciar) {
    });
 }
 
+const btnDarkMode = document.getElementById ("btn-dark-mode");
+btnDarkMode.addEventListener("click", ()=> {
+    document.body.classList.toggle("dark-mode");
 
+    if (document.body.classList.contains("dark-mode")) {
+        btnDarkMode.textContent = "🌞";
+    }
+    else {
+        btnDarkMode.textContent = "🌙"; 
+    }
+});
 
